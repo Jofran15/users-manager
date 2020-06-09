@@ -1,0 +1,9 @@
+.user_card{
+    
+        width: 50%;
+        height: 125px;
+        display: flex;
+        flex-direction: row;
+        background-color: teal;
+        border-radius: 1px;
+}
