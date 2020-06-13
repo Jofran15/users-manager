@@ -1,10 +1,13 @@
 import React, { Component } from 'react'
 
 class UserForm extends Component {
-  state = {}
+  state = {
+    firtsName:'',
+    lastName:'',
+  }
   handleChange = (e) =>
     this.setState({
-      [e.target.name]: e.target.value,
+      [e.target.firstName]: e.target.value,
     })
   handleSubmit = (e) => {
     e.preventDefault()
@@ -16,22 +19,24 @@ class UserForm extends Component {
       <form onSubmit={this.handleSubmit}>
         <div className='users_form'>
           <div className='users_inputs'>
+          <label>Nombre</label>
             
             <input
               type='text'
-              name='name'
-              onChange={this.handleChange}
-              placeholder='Nombre'
-              value={this.state.name}
+              name='firstName'
+              onChange={this.props.onChange}
+              value= {this.props.formValues.name}             
+             
             ></input>
+              <label>Apellido</label>
             <input
-              type='password'
-              name='password'
-              onChange={this.handleChange}
-              placeholder='Contraseña'
-              value={this.state.password}
+              type='text'
+              name='lastName'
+              onChange={this.props.onChange}             
+              value={this.props.formValues.lastName}
+             
             ></input>
-            <button onClick={this.handleClick}>Ingresar</button>
+            <button onClick={this.handleClick}>Guardar</button>
           </div>
         </div>
       </form>
